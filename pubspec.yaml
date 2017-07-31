@@ -1,0 +1,8 @@
+name:         xdart
+version:      0.0.0
+author:       Herman Bergwerf <hermanbergwerf@gmail.com>
+description:  x for Dart
+homepage:     https://github.com/hermanbergwerf/xdart
+environment:
+  sdk:        '>=1.8.0 <2.0.0'
+dependencies:
