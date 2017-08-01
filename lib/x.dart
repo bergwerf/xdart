@@ -34,7 +34,7 @@ Future<X11ConnectionReply> x11Handshake(X11Info info) async {
   req.authorizationProtocolData = new Uint8List.fromList(authdata);
   write(info.socket, req);
 
-  // TODO: should be able to handle success = 0 replies (and read reason).
+  // TODO: handle failure response.
   final reply = new X11ConnectionReply();
   await read(info.reader, reply);
   return reply;
@@ -42,7 +42,7 @@ Future<X11ConnectionReply> x11Handshake(X11Info info) async {
 
 var _x11id = 0;
 int x11GenerateId(X11ConnectionReply info) {
-  return (_x11id++ | info.resourceIdBase);
+  return _x11id++ | info.resourceIdBase;
 }
 
 void x11CreateGC(X11Info info, int ctxId, int rootId) {

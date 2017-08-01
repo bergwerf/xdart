@@ -29,4 +29,6 @@ Future main() async {
   final winId = x11GenerateId(info.header);
   x11CreateWindow(info, winId, rootId, 200, 200, 400, 400, 1, 1, rootVisualId);
   x11MapWindow(info, winId);
+
+  // TODO: start listening for events.
 }
